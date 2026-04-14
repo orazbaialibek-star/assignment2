@@ -112,7 +112,7 @@ public class IntArray {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     /// Returns true if there are no elements in the array.

@@ -1,25 +1,42 @@
 public class StackArray implements IntStack{
+    IntArray arr = new IntArray();
+
     @Override
     public boolean empty() {
-        return false;
+        return arr.size() == 0;
     }
 
     @Override
     public int peek() {
-        return 0;
+        return arr.get(arr.size() - 1);
     }
 
     @Override
     public int pop() {
-        return 0;
+        return arr.removeLast();
     }
 
     @Override
     public void push(int item) {
-        return;
+        arr.add(item);
+    }
+
+    @Override
+    public String toString() {
+        String s = "[";
+        for (int i = 0; i < arr.size(); i++) {
+            s += arr.get(i);
+            if (i < arr.size() - 1) s += ", ";
+        }
+        return s + "]";
     }
 
     static void main() {
+        StackArray stack = new StackArray();
+        stack.push(5);
+        stack.push(67);
+        stack.push(52);
 
+        System.out.println(stack);
     }
 }
