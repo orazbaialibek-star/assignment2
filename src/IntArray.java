@@ -1,6 +1,3 @@
-import com.sun.security.jgss.GSSUtil;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 /// A resizable array of integers.
