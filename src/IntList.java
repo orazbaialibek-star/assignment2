@@ -7,6 +7,10 @@ public class IntList {
         size = 0;
     }
 
+    public Node head(){
+        return head;
+    }
+
     /// Returns the number of items in the list.
     public int size(){
         return size;
