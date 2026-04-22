@@ -3,7 +3,7 @@ public class QueueList implements IntQueue{
 
     @Override
     public boolean empty() {
-        return list.size() == 0;
+        return list.isEmpty();
     }
 
     @Override
@@ -37,6 +37,6 @@ public class QueueList implements IntQueue{
 
     ///  main method to test the class.
     static void main() {
-        QueueList queue = new QueueList();
+        QueueList q = new QueueList();
     }
 }

@@ -31,6 +31,16 @@ public class StackQueue implements IntStack{
     }
 
     static void main() {
+        StackQueue s = new StackQueue();
 
+        s.push(17);
+        s.push(52);
+        s.push(67);
+
+        System.out.println(s);
+        System.out.println(s.peek());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s);
     }
 }

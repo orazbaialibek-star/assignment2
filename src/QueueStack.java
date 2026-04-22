@@ -1,21 +1,24 @@
 public class QueueStack implements IntQueue{
+    StackArray sIn = new StackArray();
+    StackArray sOut = new StackArray();
+
     @Override
     public boolean empty() {
-        return false;
+        return sIn.empty() || sOut.empty();
     }
 
     @Override
     public void add(int item) {
-
+        sIn.push(item);
     }
 
     @Override
     public int peek() {
-        return 0;
+        return sIn.peek();
     }
 
     @Override
     public int remove() {
-        return 0;
+        return sIn.pop();
     }
 }
