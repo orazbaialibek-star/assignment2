@@ -19,6 +19,44 @@ public class QueueStack implements IntQueue{
 
     @Override
     public int remove() {
-        return sIn.pop();
+        if (sOut.empty()) {
+            while (!sIn.empty()) {
+                sOut.push(sIn.pop());
+            }
+        }
+        return sOut.pop();
+    }
+
+    public String stringIn(){
+        return sIn.toString();
+    }
+
+    public String stringOut(){
+        return sOut.toString();
+    }
+
+    public void check(QueueStack qs){
+        System.out.println(qs.stringIn());
+        System.out.println(qs.stringOut());
+    }
+
+    static void main(){
+        QueueStack qs = new QueueStack();
+
+        qs.add(41);
+        qs.add(49);
+        qs.add(32);
+        qs.add(76);
+
+        qs.check(qs);
+        System.out.println(qs.peek());
+        System.out.println(qs.remove());
+        qs.check(qs);
+
+        qs.add(67);
+
+        qs.check(qs);
+        System.out.println(qs.remove());
+        qs.check(qs);
     }
 }

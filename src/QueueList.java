@@ -38,5 +38,17 @@ public class QueueList implements IntQueue{
     ///  main method to test the class.
     static void main() {
         QueueList q = new QueueList();
+
+        q.add(16);
+        q.add(24);
+        q.add(302);
+
+        System.out.println(q);
+        System.out.println(q.peek());
+        System.out.println(q.remove());
+        System.out.println(q.remove());
+        System.out.println(q.remove());
+        System.out.println(q);
+        System.out.println(q.empty());
     }
 }

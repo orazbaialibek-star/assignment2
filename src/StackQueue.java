@@ -30,6 +30,11 @@ public class StackQueue implements IntStack{
         q2 = temp;
     }
 
+    @Override
+    public String toString() {
+        return q1.toString();
+    }
+
     static void main() {
         StackQueue s = new StackQueue();
 
