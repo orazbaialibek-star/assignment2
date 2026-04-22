@@ -29,8 +29,6 @@ public class IntArray {
 
     ///  Returns the item at the index position in the array.
     public int get(int index){
-        if (index < 0 || index >= size)
-            throw new IndexOutOfBoundsException();
         return array[index];
     }
 

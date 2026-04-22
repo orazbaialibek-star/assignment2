@@ -3,7 +3,7 @@ public class StackArray implements IntStack{
 
     @Override
     public boolean empty() {
-        return arr.size() == 0;
+        return arr.isEmpty();
     }
 
     @Override

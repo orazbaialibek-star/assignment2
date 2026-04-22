@@ -195,5 +195,10 @@ public class IntList {
         System.out.println(list.removeFirst());
         System.out.println(list);
         System.out.println(list.indexOf(52));
+        list.addLast(5);
+        list.addLast(67);
+        System.out.println(list);
+        list.reverse();
+        System.out.println(list);
     }
 }
