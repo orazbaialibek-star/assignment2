@@ -8,12 +8,12 @@ public class MinHeap implements IntQueue{
 
     @Override
     public void add(int item) {
-
+        arr.add(item);
     }
 
     @Override
     public int peek() {
-        return 0;
+        return arr.get(0);
     }
 
     @Override
