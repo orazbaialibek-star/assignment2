@@ -33,7 +33,6 @@ public class MinHeap implements IntQueue{
             int j = parent;
             arr.set((i-1)/2, child);
             arr.set(i, j);
-            Compare(i - 1);
         }
     }
 
@@ -47,9 +46,9 @@ public class MinHeap implements IntQueue{
         // test the MinHeap class by using it to sort an array in descending order
         MinHeap min = new MinHeap();
         min.add(12);
-        min.add(5);
+        min.add(14);
         min.add(6);
-        min.add(1);
+        min.add(4);
 
         System.out.println(min);
     }
