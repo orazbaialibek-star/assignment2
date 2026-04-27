@@ -21,7 +21,13 @@ public class MinHeap implements IntQueue{
 
     @Override
     public int remove() {
-        return arr.remove(arr.size() - 1);
+        int res = arr.get(0);
+        arr.set(0, arr.get(arr.size() - 1));
+        arr.remove(arr.size() - 1);
+        for (int j = arr.size() - 1; j >= 0; j--){
+            Compare(j);
+        }
+        return res;
     }
 
     public void Compare(int i){
@@ -45,10 +51,14 @@ public class MinHeap implements IntQueue{
     static void main() {
         // test the MinHeap class by using it to sort an array in descending order
         MinHeap min = new MinHeap();
-        min.add(12);
-        min.add(14);
+        min.add(5);
+        min.add(3);
         min.add(6);
         min.add(4);
+
+        System.out.println(min);
+
+        min.remove();
 
         System.out.println(min);
     }
