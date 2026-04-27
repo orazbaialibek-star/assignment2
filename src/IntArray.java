@@ -72,14 +72,14 @@ public class IntArray {
 
     /// Removes the item at index i and returns it.
     public int remove(int index){
-        int removed = array[index];
+        int num = array[index];
 
         for (int i = index; i < size - 1; i++) {
             array[i] = array[i + 1];
         }
 
         size--;
-        return removed;
+        return num;
     }
 
     /// Removes the first item and returns it.
@@ -122,12 +122,12 @@ public class IntArray {
     /// Returns a string representation of the array, e.g. an array that contains 1,2 and 3 would look as "[1, 2, 3]".
     @Override
     public String toString() {
-        String s = "[";
+        System.out.print("[");
         for (int i = 0; i < size; i++) {
-            s += array[i];
-            if (i < size - 1) s += ", ";
+            System.out.print(array[i]);
+            if(i < size - 1) System.out.print(", ");
         }
-        return s + "]";
+        return "]";
     }
 
     public static Scanner sc = new Scanner(System.in);
