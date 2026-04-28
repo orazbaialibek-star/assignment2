@@ -23,12 +23,7 @@ public class StackArray implements IntStack{
 
     @Override
     public String toString() {
-        String s = "[";
-        for (int i = 0; i < arr.size(); i++) {
-            s += arr.get(i);
-            if (i < arr.size() - 1) s += ", ";
-        }
-        return s + "]";
+        return arr.toString();
     }
 
     static void main() {

@@ -23,16 +23,7 @@ public class QueueList implements IntQueue{
 
     @Override
     public String toString() {
-        String s = "[";
-        IntList.Node cur = list.head();
-
-        while (cur != null) {
-            s += cur.value;
-            if (cur.next != null) s += ", ";
-            cur = cur.next;
-        }
-
-        return s + "]";
+        return list.toString();
     }
 
     ///  main method to test the class.

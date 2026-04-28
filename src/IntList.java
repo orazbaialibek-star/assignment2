@@ -161,16 +161,16 @@ public class IntList {
 
     @Override
     public String toString() {
-        String s = "[";
+        System.out.print("[");
         Node cur = head;
 
         while (cur != null) {
-            s += cur.value;
-            if (cur.next != null) s += ", ";
+            System.out.print(cur.value);
+            if (cur.next != null) System.out.print(", ");
             cur = cur.next;
         }
 
-        return s + "]";
+        return "]";
     }
 
     // Internal class that represent a list node.
