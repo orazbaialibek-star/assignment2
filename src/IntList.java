@@ -31,13 +31,14 @@ public class IntList {
     public void addLast(int item){
         if (head == null) {
             head = new Node(item);
-        } else {
-            Node cur = head;
-            while (cur.next != null) {
-                cur = cur.next;
-            }
-            cur.next = new Node(item);
+            return;
         }
+        Node cur = head;
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = new Node(item);
+
         size++;
     }
 
@@ -47,11 +48,11 @@ public class IntList {
             addFirst(item);
             return;
         }
+
         Node cur = head;
         for (int i = 0; i < index - 1; i++) {
             cur = cur.next;
         }
-
         cur.next = new Node(item, cur.next);
         size++;
     }
@@ -81,6 +82,7 @@ public class IntList {
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
+
         int old = cur.value;
         cur.value = item;
         return old;
@@ -107,11 +109,11 @@ public class IntList {
             size--;
             return val;
         }
+
         Node cur = head;
         for (int i = 0; i < index - 1; i++) {
             cur = cur.next;
         }
-
         int removed = cur.next.value;
         cur.next = cur.next.next;
         size--;
@@ -121,20 +123,16 @@ public class IntList {
     /// Removes the first occurrence of the specified item from this list, if it is present.
     public boolean removeItem(int item){
         if (head == null) return false;
-
         if (head.value == item) {
             removeFirst();
             return true;
         }
-
-        Node cur = head;
-        while (cur.next != null) {
-            if (cur.next.value == item) {
-                cur.next = cur.next.next;
-                size--;
+        for(int i = 0; i <= size; i++){
+            int targ = get(i);
+            if (targ == item){
+                remove(i);
                 return true;
             }
-            cur = cur.next;
         }
         return false;
     }
@@ -148,14 +146,12 @@ public class IntList {
     public void reverse(){
         Node prev = null;
         Node cur = head;
-
         while (cur != null) {
             Node next = cur.next;
             cur.next = prev;
             prev = cur;
             cur = next;
         }
-
         head = prev;
     }
 
@@ -163,13 +159,11 @@ public class IntList {
     public String toString() {
         System.out.print("[");
         Node cur = head;
-
         while (cur != null) {
             System.out.print(cur.value);
             if (cur.next != null) System.out.print(", ");
             cur = cur.next;
         }
-
         return "]";
     }
 
@@ -177,28 +171,32 @@ public class IntList {
     static class Node {
         int value;
         Node next;
-        Node(int value) { this.value = value; }
-        Node(int value, Node next) { this.value = value; this.next = next; }
+        Node(int value) {
+            this.value = value;
+        }
+        Node(int value, Node next) {
+            this.value = value; this.next = next;
+        }
     }
 
     /// main method to test the class.
     static void main() {
         IntList list = new IntList();
-        list.addLast(5);
-        list.addLast(67);
-        list.addLast(52);
-        list.add(0,3);
-        list.set(0,2);
-        System.out.println(list.getLast());
-        list.remove(2);
-        list.removeItem(5);
-        System.out.println(list.removeFirst());
+        list.addLast(13);
+        list.addFirst(67);
+        list.addLast(2);
+        list.addFirst(52);
         System.out.println(list);
-        System.out.println(list.indexOf(52));
-        list.addLast(5);
-        list.addLast(67);
+        list.add(0,5);
+        System.out.println(list);
+        System.out.println(list.getFirst());
+        System.out.println(list.getLast());
+        System.out.println(list.get(0));
+        list.set(3, 123);
         System.out.println(list);
         list.reverse();
+        System.out.println(list);
+        list.removeItem(67);
         System.out.println(list);
     }
 }

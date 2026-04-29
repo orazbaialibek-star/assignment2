@@ -20,11 +20,9 @@ public class StackQueue implements IntStack{
     @Override
     public void push(int item) {
         q2.add(item);
-
         while (!q1.empty()) {
             q2.add(q1.remove());
         }
-
         QueueList temp = q1;
         q1 = q2;
         q2 = temp;

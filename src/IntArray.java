@@ -123,10 +123,11 @@ public class IntArray {
     @Override
     public String toString() {
         System.out.print("[");
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 1; i++) {
             System.out.print(array[i]);
-            if(i < size - 1) System.out.print(", ");
+            System.out.print(", ");
         }
+        System.out.print(array[size-1]);
         return "]";
     }
 
@@ -151,15 +152,5 @@ public class IntArray {
         a.removeItem(67);
         System.out.println(a);
         System.out.println(a.indexOf(3));
-//        while (true) {
-//            int option = sc.nextInt();
-//            switch (option){
-//                case 1:
-//                    System.out.println(a.set(1,1));
-//                    System.out.println(a);
-//                    break;
-//                default: return;
-//            }
-//        }
     }
 }
